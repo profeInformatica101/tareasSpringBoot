@@ -31,11 +31,24 @@ Explica brevemente cómo has organizado:
 
 ## 5) Configuración de la base de datos
 ### 5.1 Dependencias añadidas
-(Indica la dependencia del driver que has usado)
+	<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 ### 5.2 application.properties / application.yml
-(Pega aquí tu configuración SIN contraseñas reales si es necesario)
+spring.application.name=LibroAPP
+server.port=9092
 
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.jpa.hibernate.ddl-auto=create-drop
 ### 5.3 Pasos para crear la BD (si aplica)
 - MySQL: CREATE DATABASE ...
 - PostgreSQL: createdb ...
